@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Delicious Indian Foods</title>
+<style>
+  body {
+    background-color: #fff8f0;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  h1 {
+    color: #a52a2a;
+    margin-top: 40px;
+    font-size: 2.5em;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #333;
+  }
+
+  li {
+    margin: 10px 0;
+  }
+
+  #ritu {
+    position: absolute;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ff4500;
+  }
+</style>
+</head>
+<body>
+
+<h1>Today's Menu</h1>
+<ul>
+  <li>Chicken Rogan Josh</li>
+  <li>Lamb Keema</li>
+  <li>Bombay Aloo</li>
+  <li>Butter Naan Bread</li>
+  <li>Popadom with Dips</li>
+  <li>Rice</li>
+</ul>
+
+<div id="ritu">Ritu</div>
+
+<script>
+  const ritu = document.getElementById("ritu");
+  let x = 100, y = 100;
+  let dx = 2, dy = 2;
+  const speed = 10;
+
+  function moveRitu() {
+    const width = window.innerWidth - ritu.offsetWidth;
+    const height = window.innerHeight - ritu.offsetHeight;
+
+    x += dx;
+    y += dy;
+
+    if (x <= 0 || x >= width) dx = -dx;
+    if (y <= 0 || y >= height) dy = -dy;
+
+    ritu.style.left = x + "px";
+    ritu.style.top = y + "px";
+  }
+
+  setInterval(moveRitu, speed);
+</script>
+
+</body>
+</html>
